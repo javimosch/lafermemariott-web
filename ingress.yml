@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lafermemariott-ingress
+  annotations:
+    kubernetes.io/ingress.class: "public"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod-alt"
+spec:
+  tls:
+  - hosts:
+    - lafermemariott.misitioba.com
+    secretName: lafermemariott-misitioba-secret-tls
+  rules:
+  - host: lafermemariott.misitioba.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: misitioba-external-svc
+            port:
+              number: 3876
+
