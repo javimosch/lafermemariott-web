@@ -1,0 +1,1 @@
+npx nodemon --exec 'node server.js' --watch server -e js,html

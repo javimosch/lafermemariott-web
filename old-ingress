@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: lafermemariott-savoietech-ingress
+  name: lafermemariott-ingress
   annotations:
     kubernetes.io/ingress.class: "public"
     cert-manager.io/cluster-issuer: "letsencrypt-prod-alt"
 spec:
   tls:
   - hosts:
-    - lafermemariott.savoietech.fr
-    secretName: lafermemariott-savoietech-secret-tls
+    - lafermemariott.misitioba.com
+    secretName: lafermemariott-misitioba-secret-tls
   rules:
-  - host: lafermemariott.savoietech.fr
+  - host: lafermemariott.misitioba.com
     http:
       paths:
       - path: /
