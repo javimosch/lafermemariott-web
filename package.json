@@ -1,24 +1,26 @@
 {
   "name": "lafermemariott",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@gitlab.com/javimosch/lafermemariott.git"
   },
-  "author": "",
-  "license": "ISC",
+  "main": "index.js",
   "bugs": {
     "url": "https://gitlab.com/javimosch/lafermemariott/issues"
   },
+  "description": "",
   "homepage": "https://gitlab.com/javimosch/lafermemariott#readme",
+  "license": "ISC",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build --target=bun src/index.ts --outfile=dist/index.js",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "test": "bun test"
+  },
   "dependencies": {
-    "atob": "^2.1.2",
-    "btoa": "^1.2.1",
-    "nodemon": "^2.0.22"
+    "@elysiajs/static": "^0.7.1",
+    "elysia": "^0.7.30"
   }
 }
